@@ -1,0 +1,78 @@
+{
+  "name": "dolorumnihil",
+  "version": "1.0.0",
+  "description": "Simple REST endpoint and action routing.",
+  "main": "./lib/index",
+  "types": "./lib/index",
+  "author": "ReinholdMacejkovic",
+  "homepage": "https://github.com/CarrieMorar/dolorumnihil.git",
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "nyc mocha -r ts-node/register spec/**/*.spec.ts",
+    "coverage": "nyc report --reporter=lcov",
+    "coverage-export": "nyc report --reporter=text-lcov > coverage.lcov",
+    "lint": "tslint -p .",
+    "clean": "rm -rf coverage lib .nyc_output"
+  },
+  "files": [
+    "lib/*",
+    "README.md",
+    "LICENSE",
+    "CODE_OF_CONDUCT.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CarrieMorar/dolorumnihil.git"
+  },
+  "keywords": [
+    "AWS",
+    "API Gateway",
+    "rest",
+    "aut",
+    "eum"
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/jeremyosborne/packagejsonexample/blob/master/LICENSE.txt"
+    }
+  ],
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.51",
+    "@types/chai": "^4.2.11",
+    "@types/chai-as-promised": "^7.1.2",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^14.0.5",
+    "aws-lambda": "^1.0.6",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "codecov": "^3.7.0",
+    "mocha": "^7.2.0",
+    "nyc": "^15.0.1",
+    "source-map-support": "^0.5.19",
+    "ts-node": "^8.10.2",
+    "tslint": "^6.1.2",
+    "tslint-eslint-rules": "^5.4.0",
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "@mu-ts/logger": "^3.0.8",
+    "reflect-metadata": "^0.1.13"
+  },
+  "nyc": {
+    "include": [
+      "src/*.ts",
+      "src/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register",
+      "source-map-support/register"
+    ],
+    "sourceMap": true,
+    "instrument": true,
+    "all": true
+  }
+}
